@@ -6,5 +6,12 @@ steps:
   
 - name: 'gcr.io/general-277014/firebase'
   args: [ 'deploy', '--only', 'functions']
-  #secretEnv: ['1//0gZndiXz0_bLkCgYIARAAGBASNwF-L9IrQWZwgTzkhy3AK-iP2PEhoQNxM4Tr4h3CWrh4-vKcrblep804fR1StrrXM-jvD6yf-m4']
   dir: './helloworld'
+
+- name: 'gcr.io/cloud-builders/npm'
+  dir: './helloworld2/functions'
+  args: ['install']
+
+- name: 'gcr.io/general-277014/firebase'
+  args: [ 'deploy', '--only', 'functions']
+  dir: './helloworld2'
