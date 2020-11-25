@@ -1,3 +1,4 @@
+#hello changes
 steps:
 - name: 'gcr.io/general-277014/firebase'
   args: [ 'deploy', '--only', 'functions']
