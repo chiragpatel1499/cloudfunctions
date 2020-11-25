@@ -1,5 +1,11 @@
 #hello changes
 steps:
+- name: "gcr.io/cloud-builders/npm"
+  args: ["install"]
+
+- name: "gcr.io/cloud-builders/npm"
+  args: ["run", "build]
+
 - name: 'gcr.io/general-277014/firebase'
   args: [ 'deploy', '--only', 'functions']
   #secretEnv: ['1//0gZndiXz0_bLkCgYIARAAGBASNwF-L9IrQWZwgTzkhy3AK-iP2PEhoQNxM4Tr4h3CWrh4-vKcrblep804fR1StrrXM-jvD6yf-m4']
