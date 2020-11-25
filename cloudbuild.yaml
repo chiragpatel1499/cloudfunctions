@@ -8,6 +8,10 @@ steps:
   args: [ 'deploy', '--only', 'functions']
   dir: './helloworld'
 
+- name: 'gcr.io/cloud-builders/npm'
+  dir: './helloworldnew/functions'
+  args: ['install']
+
 - name: 'gcr.io/general-277014/firebase'
   args: [ 'deploy', '--only', 'functions']
   dir: './helloworldnew'
