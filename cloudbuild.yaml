@@ -4,10 +4,18 @@
 #  dir: 'function/dir/from/repo/root'
 
 steps:
-- name: 'gcr.io/cloud-builders/gcloud'
-  args: ['functions', 'deploy', 'helloworld', '--trigger-http', '--runtime', 'nodejs12', '--entry-point', 'helloworld']
+- name: 'gcr.io/$PROJECT_ID/firebase'
+  args: [ 'use', '$_PROJECT_NAME']
+  secretEnv: ['1//0g3_2N_66007PCgYIARAAGBASNwF-L9IrZhru2ny10X0vObHRA-_ZISZIbcGAZo-PNPLwJHN6zFIPf7M5yXwByxZ2-JvlJde0GIk']
+
+
+- name: 'gcr.io/cloud-builders/npm'
+  dir: 'functions'
+  args: ['install']
+
+
+- name: 'gcr.io/$PROJECT_ID/firebase'
+  args: [ 'deploy', '--only', 'functions']
+  secretEnv: ['1//0g3_2N_66007PCgYIARAAGBASNwF-L9IrZhru2ny10X0vObHRA-_ZISZIbcGAZo-PNPLwJHN6zFIPf7M5yXwByxZ2-JvlJde0GIk']
   dir: './helloworld'
-
-
-
 
