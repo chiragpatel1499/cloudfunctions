@@ -4,6 +4,6 @@ const functions = require('firebase-functions');
 // // https://firebase.google.com/docs/functions/write-firebase-functions
 //
 exports.helloworld = functions.https.onRequest((request, response) => {
-   functions.logger.info("Hello logs! chenges", {structuredData: true});
+   functions.logger.info("Hello logs! changes", {structuredData: true});
    response.send("Hello from Firebase!");
 });
