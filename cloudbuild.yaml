@@ -1,15 +1,5 @@
 steps:
 - name: 'gcr.io/$PROJECT_ID/firebase'
-  args: [ 'use', '$_PROJECT_NAME']
-  secretEnv: ['1//0gZndiXz0_bLkCgYIARAAGBASNwF-L9IrQWZwgTzkhy3AK-iP2PEhoQNxM4Tr4h3CWrh4-vKcrblep804fR1StrrXM-jvD6yf-m4']
-
-
-- name: 'gcr.io/cloud-builders/npm'
-  dir: 'functions'
-  args: ['install']
-
-
-- name: 'gcr.io/$PROJECT_ID/firebase'
   args: [ 'deploy', '--only', 'functions']
   secretEnv: ['1//0gZndiXz0_bLkCgYIARAAGBASNwF-L9IrQWZwgTzkhy3AK-iP2PEhoQNxM4Tr4h3CWrh4-vKcrblep804fR1StrrXM-jvD6yf-m4']
   dir: './helloworld'
